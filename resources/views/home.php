@@ -1,0 +1,1 @@
+<h1>Hello, go to the <a href="/analysis">Analysis</a> page.</h1>

@@ -4,7 +4,7 @@
 
 ### Requirements
 `sudo yum -y update`
-`sudo yum install php php-mysql php-devel php-gd php-pecl-memcache php-pspell php-snmp php-xmlrpc php-xml`
+Install PHP 7 and Update Apache [https://stackoverflow.com/questions/34873685/how-to-install-php-7-on-ec2-t2-micro-instance-running-amazon-linux-distro#answer-40581436]
 `sudo curl -sS https://getcomposer.org/installer | php`
 `mv composer.phar /usr/local/bin/composer`
 `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash`

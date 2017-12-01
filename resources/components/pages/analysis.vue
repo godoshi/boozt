@@ -3,7 +3,7 @@
 </template>
 
 <script>
-export default {
+module.exports = {
 	data() {
 		return {
 			title: 'Welcome to the analysis component',

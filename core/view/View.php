@@ -7,7 +7,7 @@ class View {
 		$this->viewLoader = $viewLoader;
 	}
 
-	public function display($viewName) {
-		return $this->viewLoader->load($viewName);
+	public function display($viewName, $data = []) {
+		return $this->viewLoader->load($viewName, $data);
 	}
 }

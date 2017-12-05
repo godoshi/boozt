@@ -25,19 +25,29 @@ gulp.task('vueify', () => {
 });
 
 gulp.task('concatCss', () => {
-  return gulp.src([
-    './node_modules/bootstrap/dist/css/bootstrap.min.css',
-  ])
-  .pipe(concat('app.css'))
-  .pipe(gulp.dest('./public/css/'));
+  return del(['./public/js/**/*.css'])
+    .then(() => {
+      return gulp.src([
+          './node_modules/tether/dist/css/tether.min.css',
+          './node_modules/bootstrap/dist/css/bootstrap.min.css',
+        ])
+        .pipe(concat('app.css'))
+        .pipe(gulp.dest('./public/css/'));
+    });
 });
 
 gulp.task('concatScripts', () => {
-  return gulp.src([
-      `${paths.tmp}/vueify.js`,
-    ])
-    .pipe(concat('app.js'))
-    .pipe(gulp.dest('./public/js'));
+  return del(['./public/js/**/*.js'])
+    .then(() => {
+      return gulp.src([
+          `${paths.tmp}/vueify.js`,
+          './node_modules/jquery/dist/jquery.js',
+          './node_modules/tether/dist/js/tether.min.js',
+          './node_modules/bootstrap/dist/js/bootstrap.js',
+        ])
+        .pipe(concat('app.js'))
+        .pipe(gulp.dest('./public/js'));
+    });
 });
 
 gulp.task('watch', () => {
